@@ -32,7 +32,7 @@ gulp.task('watch', function() {
 
 gulp.task('browser-sync', () => {
 	browserSync.init({
-	server: './public'  
+	server: '.'  
 	})
 });
 
