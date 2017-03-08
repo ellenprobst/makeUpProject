@@ -16,10 +16,15 @@
 			// text-transform: uppercase;
 			font-size: 2.6rem;
 		}
-		ul {
+		#videoList {
 			list-style: none;
 			margin: 0;
 			padding: 0;
+			.galleryCell iframe {
+				width: 720px;
+				height: 400px;
+				margin: 0 90px;
+			}
 		}
 	}
 	.video__description {

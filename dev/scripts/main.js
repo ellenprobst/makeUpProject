@@ -85,9 +85,9 @@ makeupApp.data = function(){
 
 $(function(){
 	$('#videoList').flickity({
-		cellAlign: 'left',
 		contain: true,
-		setGalllerySize: false
+		setGalllerySize: false,
+		wrapAround: true
 	});
 	makeupApp.init()
 
