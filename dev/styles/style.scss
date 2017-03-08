@@ -1,0 +1,33 @@
+@import "partials/setup";
+@import "partials/variables";
+@import "partials/header";
+
+
+.wrapper {
+	max-width: 70%; 
+	margin: 0 auto;
+}
+
+.video__wrapper {
+	.video__selection {
+		margin-bottom: 65px;
+		h2 {
+			text-align: center;
+			// text-transform: uppercase;
+			font-size: 2.6rem;
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
+	.video__description {
+		font-family: "Open Sans";
+		h3 {
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 2rem;
+		}
+	}
+}
