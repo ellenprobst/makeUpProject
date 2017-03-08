@@ -3,17 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.2/flickity.min.css">
-	<title>MakeUp Project</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Playfair+Display:400,400i" rel="stylesheet">
+	<link rel="stylesheet" href="public/styles/style.css">
+	<title>Makeup on a Budget</title>
 </head>
 <body>
 	<header>
-		<h1>MakeUp app</h1>
+		<h1>Makeup on a Budget</h1>
 	</header>
 	<main>
 		<div class="wrapper">
+			<div class="video__selection">
+				<h2>Video Picker</h2>
+				<ul id="videoPicker">
+					<li>vid1</li>
+					<li>vid2</li>
+					<li>vid3</li>
+					<li>vid4</li>
+					<li>vid5</li>
+					<li>vid6</li>
+					<li>vid7</li>
+					<li>vid8</li>
+					<li>vid9</li>
+				</ul>	
+			</div> <!-- video_selection -->
 			<div class="video__wrapper">
-				<div class="video_selection">
-					<h2>Video Picker</h2>
+				<div class="video__slider">
 					<ul id="videoList">
 						<li><iframe width="560" height="315" src="https://www.youtube.com/embed/Jki4i_rKyDA" frameborder="0" allowfullscreen></iframe></li>
 						<li><iframe width="560" height="315" src="https://www.youtube.com/embed/_kQhV4XzoGk" frameborder="0" allowfullscreen></iframe></li>
@@ -25,15 +40,11 @@
 						<li>vid8</li>
 						<li>vid9</li>
 					</ul>	
-				</div> <!-- video_selection -->
-				<div class="video">
-					<div class="video__slider">	
-					</div>
-					<div class="video__description">
-						<h3>title</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, sint. Consequatur quisquam in harum dolores, aut enim maiores animi aliquid minus perferendis debitis fuga! Dolorum fugiat a labore harum ad?</p>
-					</div>	
-				</div> <!-- video -->
+				</div>
+				<div class="video__description">
+					<h3>title</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, sint. Consequatur quisquam in harum dolores, aut enim maiores animi aliquid minus perferendis debitis fuga! Dolorum fugiat a labore harum ad?</p>
+				</div> <!-- video__description -->
 			</div> <!-- video__wrapper -->
 			<div class="products">
 				<div class="products__filter">
