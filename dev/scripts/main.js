@@ -51,10 +51,24 @@ makeupApp.display = function(){
 	
 }
 
+makeupApp.events = function(){
+	var $carousel = $("#videoList").flickity();
+	var flkty = $carousel.data("flickity");
+
+	$carousel.on( 'select.flickity', function() {
+	  console.log( 'Flickity select ' + flkty.selectedIndex )
+	})
+	
+
+	//on click on a flickity
+	//display video title
+	//and display video description 
+};
+
+
 makeupApp.init = function(){
 	makeupApp.data();
-
-
+	makeupApp.events();
 
 }
 
@@ -89,6 +103,6 @@ $(function(){
 		setGalllerySize: false,
 		wrapAround: true
 	});
-	makeupApp.init()
+	makeupApp.init();
 
 });
