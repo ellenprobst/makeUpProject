@@ -18,6 +18,9 @@ makeupApp.display = function(){
 
 makeupApp.init = function(){
 	makeupApp.data();
+
+
+
 }
 
 makeupApp.data = function(){
@@ -46,5 +49,11 @@ makeupApp.data = function(){
 
 
 $(function(){
+	$('#videoList').flickity({
+		cellAlign: 'left',
+		contain: true,
+		setGalllerySize: false
+	});
 	makeupApp.init()
+
 });
