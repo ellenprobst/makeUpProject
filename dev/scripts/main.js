@@ -66,12 +66,12 @@ makeupApp.displayVideoInfo = function(index){
 
 makeupApp.displayProductInfo = function(data){
 	// console.log(data);
-	for (let i = 0; i < 5; i = i + 1){
+	for (let i = 0; i < 3; i = i + 1){
 		var currentItem = data[i];
 		var product = $('<p>').text(currentItem.name);
 		var description = $('<p>').text(currentItem.description);
 		var price = $('<p>').text(`$${currentItem.price}`);
-		var productInfoWrap = $('<div>').append(price, product, description);
+		var productInfoWrap = $('<div>').append(product, price, description);
 
 		var associatedProductType = currentItem.product_type;
 		console.log(associatedProductType);
