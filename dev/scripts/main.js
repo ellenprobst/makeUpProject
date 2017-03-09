@@ -56,7 +56,7 @@ makeupApp.displayVideoInfo = function(index){
 	
 	$('.product__type').empty();
 	makeupApp.videoInfoList[index].productTypes.forEach(function(type){
-		console.log(type)
+		// console.log(type)
 		var title = $('<h3>').text(`${type}`);
 		var container = $('<div>').addClass(`${type}Wrapper productWrapper`).append(title);
 		$('.product__type').append(container);
@@ -65,8 +65,17 @@ makeupApp.displayVideoInfo = function(index){
 }
 
 makeupApp.displayProductInfo = function(data){
-	console.log(data);
+	// console.log(data);
 	for (let i = 0; i < 5; i = i + 1){
+		var currentItem = data[i];
+		var product = $('<p>').text(currentItem.name);
+		var description = $('<p>').text(currentItem.description);
+		var price = $('<p>').text(`$${currentItem.price}`);
+		var productInfoWrap = $('<div>').append(price, product, description);
+
+		var associatedProductType = currentItem.product_type;
+		console.log(associatedProductType);
+		$(`.${associatedProductType}Wrapper`).append(productInfoWrap);
 
 	}
 }
@@ -76,7 +85,7 @@ makeupApp.events = function(){
 	var flkty = $carousel.data("flickity");
 
 	$carousel.on( 'select.flickity', function() {
-	  console.log( 'Flickity select ' + flkty.selectedIndex )
+	  // console.log( 'Flickity select ' + flkty.selectedIndex )
 	  makeupApp.currentIndex = flkty.selectedIndex;
 	  makeupApp.displayVideoInfo(flkty.selectedIndex)
 	})
