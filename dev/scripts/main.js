@@ -3,12 +3,12 @@ makeupApp.videoInfoList = [
 	{
 		title: "How to Cover Acne​​​ | MissJessicaHarlow",
 		description: "Perfect for those tasked with concealing cystic pimples and unsightly acne-related blemishes on a daily basis, this video is full of useful techniques for creating a flawless finish on a difficult canvas.",
-		productTypes: [] //List of product types associated with this video
+		productTypes: ["eyeshadow","foundation","blush"] //List of product types associated with this video
 	},
 	{
 		title: "Kim Kardashian Makeup Tutorial​​​ | Eman​​​",
-		description: " Love her or hate her, you can’t deny how utterly fabulous Kim Kardashian’s makeup always looks—her sexy, sooty smoky eyes specifically. This thorough tutorial teaches you how to nail her signature sultry look in less than 12 minutes.",
-		productTypes: [] 
+		description: "Love her or hate her, you can’t deny how utterly fabulous Kim Kardashian’s makeup always looks—her sexy, sooty smoky eyes specifically. This thorough tutorial teaches you how to nail her signature sultry look in less than 12 minutes.",
+		productTypes: ["eyeshadow","eyeliner", "eyebrow","blush","lip_liner","lipstick"] 
 	},
 	{
 		title: "How TO: Apply FALSE EYELASHES tutorial" ,
@@ -47,8 +47,21 @@ makeupApp.videoInfoList = [
 	}
 ];
 
-makeupApp.display = function(){
+makeupApp.display = function(index){
 	
+	$('.video__description h3').text(makeupApp.videoInfoList[index].title);
+	$('.video__description p').text(makeupApp.videoInfoList[index].description);
+	
+	$('.product__type').empty();
+	makeupApp.videoInfoList[index].productTypes.forEach(function(type){
+		console.log(type)
+		$('.product__type').append(`<h3>${type}</h3>`);
+	})
+
+
+
+
+
 }
 
 makeupApp.events = function(){
@@ -57,8 +70,10 @@ makeupApp.events = function(){
 
 	$carousel.on( 'select.flickity', function() {
 	  console.log( 'Flickity select ' + flkty.selectedIndex )
+	  makeupApp.display(flkty.selectedIndex)
 	})
 	
+
 
 	//on click on a flickity
 	//display video title
