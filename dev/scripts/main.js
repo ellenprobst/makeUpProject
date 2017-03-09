@@ -64,18 +64,21 @@ makeupApp.displayVideoInfo = function(index){
 
 }
 
-makeupApp.displayProductInfo = function(data){
+makeupApp.displayProductInfo = function(data, type){
 	// console.log(data);
+
+	
 	for (let i = 0; i < 3; i = i + 1){
+
 		var currentItem = data[i];
 		var product = $('<p>').text(currentItem.name);
 		var description = $('<p>').text(currentItem.description);
 		var price = $('<p>').text(`$${currentItem.price}`);
-		var productInfoWrap = $('<div>').append(product, price, description);
+		var productInfoWrap = $('<div class="productInfoWrapper">').append(product, price, description);
 
-		var associatedProductType = currentItem.product_type;
-		console.log(associatedProductType);
-		$(`.${associatedProductType}Wrapper`).append(productInfoWrap);
+		console.log(type);
+		console.log($(`.${type}Wrapper`))
+		$(`.${type}Wrapper`).append(productInfoWrap);
 
 	}
 }
@@ -91,6 +94,10 @@ makeupApp.events = function(){
 	})
 
 	$('#cheap').on('click', function(){
+		if($(".productInfoWrapper").length > 0){
+
+			$('.productInfoWrapper').remove();
+		}
 		makeupApp.videoInfoList[makeupApp.currentIndex].productTypes.forEach(function(type){
 			makeupApp.data(type, 0, 14.99);
 		})
@@ -100,7 +107,7 @@ makeupApp.events = function(){
 
 
 makeupApp.init = function(){
-	makeupApp.data();
+
 	makeupApp.events();
 
 }
@@ -116,7 +123,7 @@ makeupApp.data = function(type, priceLow, priceHigh){
 			price_greater_than: priceLow
 		}
 	}).then(function(data){
-		makeupApp.displayProductInfo(data);
+		makeupApp.displayProductInfo(data, type);
 	})
 };
 
