@@ -47,6 +47,8 @@ makeupApp.videoInfoList = [
 	}
 ];
 
+makeupApp.currentIndex = 0;
+
 makeupApp.display = function(index){
 	
 	$('.video__description h3').text(makeupApp.videoInfoList[index].title);
@@ -70,14 +72,18 @@ makeupApp.events = function(){
 
 	$carousel.on( 'select.flickity', function() {
 	  console.log( 'Flickity select ' + flkty.selectedIndex )
+	  makeupApp.currentIndex = flkty.selectedIndex;
 	  makeupApp.display(flkty.selectedIndex)
 	})
-	
 
+	$('#cheap').on('click', function(){
+		makeupApp.videoInfoList[makeupApp.currentIndex].productTypes.forEach(function(type){
+			makeupApp.data(type, 0, 14.99);
 
-	//on click on a flickity
-	//display video title
-	//and display video description 
+			
+		})
+	})
+
 };
 
 
@@ -87,23 +93,29 @@ makeupApp.init = function(){
 
 }
 
-makeupApp.data = function(){
+makeupApp.data = function(type, priceLow, priceHigh){
 	$.ajax({
 		url: "http://makeup-api.herokuapp.com/api/v1/products.json",
 		method: "GET",
 		dataType: "json",
 		data: {
-			product_type: "lipstick",
-			price_less_than: 20.00
-
+			product_type: type,
+			price_less_than: priceHigh,
+			price_greater_than: priceLow
 		}
 	}).then(function(data){
 		console.log(data);
 	})
 };
 
+//$$$ = >$40
+//$$ = < $39.99 & >15
+//$ = < $14.99
 
-
+//we need 3 parameters
+//product type, and prices less and greater than
+//filter will be triggered when user clicks price-range selection
+//
 
 
 
