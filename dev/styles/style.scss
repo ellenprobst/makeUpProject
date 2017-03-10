@@ -7,6 +7,7 @@ body {
 }
 h1, h2, h3, h4 {
 	font-family: 'Playfair Display', serif;
+	color: $primaryColor;
 }
 
 .wrapper {
@@ -42,9 +43,28 @@ h1, h2, h3, h4 {
 		}
 	}
 }
+.products__types h2 {
+	font-size: 3.6rem;
+	text-align: center;
+	text-decoration: underline;
+	text-transform: capitalize;
+	line-height: 2;
+}
+.products__filter {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.products__filter--price {
+	margin: 0 10px;
+}
 
 .productWrapper h3 {
 	text-transform: capitalize;
-	font-size: 2.6rem;
-	font-weight: 100;
+    font-size: 2.6rem;
+    font-weight: 100;
+    background-color: $primaryColor;
+    border-radius: 15px;
+    color: $accentDark;
 }
