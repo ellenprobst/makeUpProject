@@ -49,6 +49,8 @@ makeupApp.videoInfoList = [
 
 makeupApp.currentIndex = 0;
 makeupApp.listOfSelectedItems = [];
+makeupApp.total = 0;
+makeupApp.shoppingCart = [];
 
 makeupApp.displayVideoInfo = function(index){
 	
@@ -82,7 +84,7 @@ makeupApp.displayProductInfo = function(data, type){
 		var productItem = {
 			id:currentItem.id,
 			name:currentItem.name,
-			price:currentItem.price,
+			price:priceRounded,
 			image:currentItem.image_link
 		 };
 	// console.log(i);
@@ -129,7 +131,27 @@ makeupApp.init = function(){
 	//check if the button element exists
 
 	$('.product__type').on('click', '.cartButton', function(){
-		console.log("sworking?");
+		// console.log("twerking?");
+
+		var currentItemId = $(this).data("id")
+
+		var filteredItem = makeupApp.listOfSelectedItems.filter(function(itemOfList) {
+
+			// console.log("This is what the current ID is:" + itemOfList.id);
+			// console.log("This is what we are looking for:" + currentItemId);
+			return itemOfList.id === currentItemId;
+
+		}) // filteredItem
+
+		// console.log(makeupApp.total);
+		console.log(filteredItem[0].price);
+
+		makeupApp.total = makeupApp.total + parseFloat(filteredItem[0].price);
+		makeupApp.shoppingCart.push(filteredItem[0]);
+
+		console.log(makeupApp.total.toFixed(2));
+		console.log(makeupApp.shoppingCart);
+		// console.log(makeupApp.listOfSelectedItems)
 	})
 	// $('button').on('click', function(e) {
 	// 	//check what that casrt item data-id iss
@@ -141,6 +163,9 @@ makeupApp.init = function(){
 	// });
 
 }
+
+
+
 
 makeupApp.data = function(type, priceLow, priceHigh){
 	$.ajax({
