@@ -119,6 +119,12 @@ makeupApp.events = function(){
 		})
 	});
 
+	$('select').on( 'change', function() {
+	  var index = $(this).val();
+	  $carousel.flickity( 'select', index );
+	  console.log(index);
+	});
+
 };
 
 
