@@ -68,15 +68,15 @@ makeupApp.displayVideoInfo = function(index){
 makeupApp.displayProductInfo = function(data, type){
 	// console.log(data);
 	var productTypeOfVideo = [];
-	
 	for (let i = 0; i < 3; i = i + 1){
 		var currentItem = data[i];
+		// console.log(currentItem.id)
 		var priceRounded = parseFloat(currentItem.price).toFixed(2);
 		var image = $('<img>').attr('src', currentItem.image_link).attr('alt', `${currentItem.name}`);
 		var product = $('<p>').text(currentItem.name);
 		var description = $('<p>').text(currentItem.description);
 		var price = $('<p>').text(`$${priceRounded}`);
-		var button = $('<button>').text('Add to cart');
+		var button = $('<button>').html('<i class="fa fa-shopping-cart" aria-hidden="true"></i>').addClass('cartButton').attr('data-id',currentItem.id);
 		var productInfoWrap = $('<div class="productInfoWrapper ">').append(image,product, price, description, button);
 
 		var productItem = {
@@ -84,6 +84,7 @@ makeupApp.displayProductInfo = function(data, type){
 			price:currentItem.price,
 			image:currentItem.image_link
 		 };
+	// console.log(i);
 
 		 productTypeOfVideo.push(productItem);
 		// console.log(type);
