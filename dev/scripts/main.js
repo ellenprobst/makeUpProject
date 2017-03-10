@@ -13,37 +13,37 @@ makeupApp.videoInfoList = [
 	{
 		title: "How TO: Apply FALSE EYELASHES tutorial" ,
 		description: "If false eyelashes happen to be the biggest beauty bane of your existence, watch this in-depth six minute tutorial to learn easy-to-follow tips on how to quickly apply a band of falsies so that they look more natural and super flattering.",
-		productTypes: []
+		productTypes: ["eyeliner","mascara"]
 	},
 	{
 		title: "How To: The Perfect Red Lip Tutorial",
 		description: "While it may be intimidating for some, red lipstick dials up the glam on any outfit—therefore every girl needs to know how to make the look work for her. This video provides a visual step-by-step on painting the perfect punchy candy apple red pout." ,
-		productTypes: []
+		productTypes: ["lipstick","lip_liner","foundation"]
 	},
 	{
 		title: "Perfect Eyeliner Tutorial!",
 		description: "Feline eyeliner only looks fierce when it’s done just right—this amazing tutorial details two different ways to master the cat eye look as well as how to ensure your wings are perfectly symmetrical.",
-		productTypes: []
+		productTypes: ["eyeliner"]
 	},
 	{
 		title: "FAST Makeup Touch-up Routine!",
 		description: " Think of this as the five-minute face in reverse. After you’ve gotten all dolled up in the morning, this informative video teaches you how to touch everything up in four simple steps. Freshening up your face for cocktail hour has never been easier.",
-		productTypes: []
+		productTypes: [""]
 	},
 	{
 		title: "How to: Contour & Highlight Your Face",
 		description: "If the mere thought of purposefully creating a sunken-in look on your face is daunting, this comprehensive tutorial shares tricks for contouring your nose, forehead, and chin and intensifying the hollows of your cheeks for natural looking dimension.",
-		productTypes: []
+		productTypes: ["bronzer","blush"]
 	},
 	{
 		title: "Tutorial: Fresh and Simple Everyday Makeup",
 		description: "If you’re still struggling to perfect your no-fail everyday face, go for ‘girl next door gorgeous’. This instructional visual swiftly takes you through all of the necessary steps for looking fresh-faced and beautiful in a flash.",
-		productTypes: []
+		productTypes: ["eyeshadow","eyeliner","mascara","bronzer","blush","lipstick"]
 	},
 	{
 		title: "How to Conceal Dark Circles on Any Skin Tone",
 		description: "If the brown, green, pink, and yellow concealer wheel feels a lot like a cosmetic conundrum, this 12-minute visual breaks down its usefulness for you while sharing tricks on masking dark circles and minimizing the appearance of puffiness.",
-		productTypes: []
+		productTypes: ["concealer","foundation"]
 	}
 ];
 
