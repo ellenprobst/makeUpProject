@@ -43,11 +43,12 @@ makeupApp.videoInfoList = [
 	{
 		title: "How to Conceal Dark Circles on Any Skin Tone",
 		description: "If the brown, green, pink, and yellow concealer wheel feels a lot like a cosmetic conundrum, this 12-minute visual breaks down its usefulness for you while sharing tricks on masking dark circles and minimizing the appearance of puffiness.",
-		productTypes: ["concealer","foundation"]
+		productTypes: ["foundation"]
 	}
 ];
 
 makeupApp.currentIndex = 0;
+makeupApp.listOfSelectedItems = [];
 
 makeupApp.displayVideoInfo = function(index){
 	
@@ -66,22 +67,33 @@ makeupApp.displayVideoInfo = function(index){
 
 makeupApp.displayProductInfo = function(data, type){
 	// console.log(data);
-
+	var productTypeOfVideo = [];
 	
 	for (let i = 0; i < 3; i = i + 1){
 		var currentItem = data[i];
 		var priceRounded = parseFloat(currentItem.price).toFixed(2);
-
+		var image = $('<img>').attr('src', currentItem.image_link).attr('alt', `${currentItem.name}`);
 		var product = $('<p>').text(currentItem.name);
 		var description = $('<p>').text(currentItem.description);
 		var price = $('<p>').text(`$${priceRounded}`);
-		var productInfoWrap = $('<div class="productInfoWrapper">').append(product, price, description);
+		var button = $('<button>').text('Add to cart');
+		var productInfoWrap = $('<div class="productInfoWrapper ">').append(image,product, price, description, button);
 
+		var productItem = {
+			name:currentItem.name,
+			price:currentItem.price,
+			image:currentItem.image_link
+		 };
+
+		 productTypeOfVideo.push(productItem);
 		// console.log(type);
 		// console.log($(`.${type}Wrapper`))
 		$(`.${type}Wrapper`).append(productInfoWrap);
 
 	}
+
+	makeupApp.listOfSelectedItems.push(productTypeOfVideo);
+
 }
 
 makeupApp.events = function(){
@@ -152,5 +164,6 @@ $(function(){
 		wrapAround: true
 	});
 	makeupApp.init();
+		console.log(makeupApp.listOfSelectedItems)
 
 });
