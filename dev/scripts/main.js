@@ -67,7 +67,7 @@ makeupApp.displayVideoInfo = function(index){
 
 makeupApp.displayProductInfo = function(data, type){
 	// console.log(data);
-	var productTypeOfVideo = [];
+
 	for (let i = 0; i < 3; i = i + 1){
 		var currentItem = data[i];
 		// console.log(currentItem.id)
@@ -80,20 +80,20 @@ makeupApp.displayProductInfo = function(data, type){
 		var productInfoWrap = $('<div class="productInfoWrapper ">').append(image,product, price, description, button);
 
 		var productItem = {
+			id:currentItem.id,
 			name:currentItem.name,
 			price:currentItem.price,
 			image:currentItem.image_link
 		 };
 	// console.log(i);
 
-		 productTypeOfVideo.push(productItem);
+		makeupApp.listOfSelectedItems.push(productItem);
 		// console.log(type);
 		// console.log($(`.${type}Wrapper`))
 		$(`.${type}Wrapper`).append(productInfoWrap);
 
 	}
 
-	makeupApp.listOfSelectedItems.push(productTypeOfVideo);
 
 }
 
@@ -115,7 +115,7 @@ makeupApp.events = function(){
 		makeupApp.videoInfoList[makeupApp.currentIndex].productTypes.forEach(function(type){
 			makeupApp.data(type, 0, 14.99);
 		})
-	})
+	});
 
 };
 
@@ -124,6 +124,21 @@ makeupApp.init = function(){
 
 	makeupApp.displayVideoInfo(makeupApp.currentIndex);
 	makeupApp.events();
+
+
+	//check if the button element exists
+
+	$('.product__type').on('click', '.cartButton', function(){
+		console.log("sworking?");
+	})
+	// $('button').on('click', function(e) {
+	// 	//check what that casrt item data-id iss
+	// 	console.log(e, "Hello");
+	// 	// console.log(makeupApp.listOfSelectedItems);
+
+
+
+	// });
 
 }
 
@@ -165,6 +180,8 @@ $(function(){
 		wrapAround: true
 	});
 	makeupApp.init();
-		console.log(makeupApp.listOfSelectedItems)
+
+
+		
 
 });
