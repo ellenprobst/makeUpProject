@@ -69,15 +69,16 @@ makeupApp.displayProductInfo = function(data, type){
 
 	
 	for (let i = 0; i < 3; i = i + 1){
-
 		var currentItem = data[i];
+		var priceRounded = parseFloat(currentItem.price).toFixed(2);
+
 		var product = $('<p>').text(currentItem.name);
 		var description = $('<p>').text(currentItem.description);
-		var price = $('<p>').text(`$${currentItem.price}`);
+		var price = $('<p>').text(`$${priceRounded}`);
 		var productInfoWrap = $('<div class="productInfoWrapper">').append(product, price, description);
 
-		console.log(type);
-		console.log($(`.${type}Wrapper`))
+		// console.log(type);
+		// console.log($(`.${type}Wrapper`))
 		$(`.${type}Wrapper`).append(productInfoWrap);
 
 	}
