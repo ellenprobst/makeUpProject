@@ -2,6 +2,12 @@
 @import "partials/variables";
 @import "partials/header";
 
+body {
+	background-color: $accentLight;
+}
+h1, h2, h3, h4 {
+	font-family: 'Playfair Display', serif;
+}
 
 .wrapper {
 	max-width: 70%; 
@@ -35,4 +41,10 @@
 			font-size: 2rem;
 		}
 	}
+}
+
+.productWrapper h3 {
+	text-transform: capitalize;
+	font-size: 2.6rem;
+	font-weight: 100;
 }
