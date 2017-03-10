@@ -90,7 +90,7 @@ makeupApp.events = function(){
 	$carousel.on( 'select.flickity', function() {
 	  // console.log( 'Flickity select ' + flkty.selectedIndex )
 	  makeupApp.currentIndex = flkty.selectedIndex;
-	  makeupApp.displayVideoInfo(flkty.selectedIndex)
+	  makeupApp.displayVideoInfo(makeupApp.currentIndex);
 	})
 
 	$('#cheap').on('click', function(){
@@ -108,6 +108,7 @@ makeupApp.events = function(){
 
 makeupApp.init = function(){
 
+	makeupApp.displayVideoInfo(makeupApp.currentIndex);
 	makeupApp.events();
 
 }
