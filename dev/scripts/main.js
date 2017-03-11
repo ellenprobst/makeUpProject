@@ -125,17 +125,6 @@ makeupApp.events = function(){
 	  console.log(index);
 	});
 
-};
-
-
-makeupApp.init = function(){
-
-	makeupApp.displayVideoInfo(makeupApp.currentIndex);
-	makeupApp.events();
-
-
-	//check if the button element exists
-
 	$('.product__type').on('click', '.cartButton', function(){
 		// console.log("twerking?");
 
@@ -157,8 +146,68 @@ makeupApp.init = function(){
 
 		console.log(makeupApp.total.toFixed(2));
 		console.log(makeupApp.shoppingCart);
+
+		var makeupImage = filteredItem[0].image;
+		var makeupName = filteredItem[0].name;
+		var makeupPrice = filteredItem[0].price;
+
+		makeupApp.displayCart(makeupImage, makeupName, makeupPrice);
 		// console.log(makeupApp.listOfSelectedItems)
 	})
+
+	$(".basket__layover").on("click", ".removeItem", function() {
+		makeupApp.total = 0;
+		var cartItemIndex = $(this).data("id");
+
+		makeupApp.shoppingCart.splice(cartItemIndex,1);
+		console.log(makeupApp.shoppingCart);
+
+		$(".basket__layover").empty();
+
+		makeupApp.shoppingCart.forEach(function(currentItem, index) {
+			var currentItem = makeupApp.shoppingCart[index]
+			var makeupImage = currentItem.image;
+			var makeupName = currentItem.name;
+			var makeupPrice = currentItem.price;
+
+			makeupApp.displayCart(makeupImage, makeupName, makeupPrice)
+			makeupApp.total = makeupApp.total + parseFloat(currentItem.price);
+		});
+
+		var makeupTotalEl = $("<p>").text(`Your total is: $${makeupApp.total.toFixed(2)}`);
+		$(".basket__total").html(makeupTotalEl);
+	});
+
+};
+
+
+makeupApp.displayCart = function(makeupImage, makeupName, makeupPrice) {
+
+	var makeupImageEl = $("<img>").attr("src", makeupImage).attr("alt", `Image of ${makeupName}`);
+	var makeupNameEl = $("<p>").text(makeupName);
+	var makeupPriceEl = $("<p>").text(`$${makeupPrice}`);
+	var cartItemIndex = makeupApp.shoppingCart.length - 1;
+	var makeupItemButtonEl = $("<button>").addClass("removeItem").text("Remove Item").attr('data-id',cartItemIndex);
+
+	var cartItemContainer = $("<div>").append(makeupImageEl, makeupNameEl, makeupPriceEl, makeupItemButtonEl).addClass(`cartItemContainer${cartItemIndex}`);
+
+	$(".basket__layover").append(cartItemContainer);
+	var makeupTotalEl = $("<p>").text(`Your total is: $${makeupApp.total.toFixed(2)}`);
+	$(".basket__total").html(makeupTotalEl);
+
+	console.log(makeupApp.shoppingCart.length);
+
+}
+
+makeupApp.init = function(){
+
+	makeupApp.displayVideoInfo(makeupApp.currentIndex);
+	makeupApp.events();
+
+
+	//check if the button element exists
+
+
 	// $('button').on('click', function(e) {
 	// 	//check what that casrt item data-id iss
 	// 	console.log(e, "Hello");
