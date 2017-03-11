@@ -119,6 +119,26 @@ makeupApp.events = function(){
 		})
 	});
 
+	$('#middle').on('click', function(){
+		if($(".productInfoWrapper").length > 0){
+
+			$('.productInfoWrapper').remove();
+		}
+		makeupApp.videoInfoList[makeupApp.currentIndex].productTypes.forEach(function(type){
+			makeupApp.data(type, 15, 39.99);
+		})
+	});
+
+	$('#pricy').on('click', function(){
+		if($(".productInfoWrapper").length > 0){
+
+			$('.productInfoWrapper').remove();
+		}
+		makeupApp.videoInfoList[makeupApp.currentIndex].productTypes.forEach(function(type){
+			makeupApp.data(type, 40, 10000);
+		})
+	});
+
 	$('select').on( 'change', function() {
 	  var index = $(this).val();
 	  $carousel.flickity( 'select', index );
