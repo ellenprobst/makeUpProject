@@ -43,7 +43,7 @@ makeupApp.videoInfoList = [
 	{
 		title: "How to Conceal Dark Circles on Any Skin Tone",
 		description: "If the brown, green, pink, and yellow concealer wheel feels a lot like a cosmetic conundrum, this 12-minute visual breaks down its usefulness for you while sharing tricks on masking dark circles and minimizing the appearance of puffiness.",
-		productTypes: ["foundation"]
+		productTypes: ["concealer","foundation"]
 	}
 ];
 
