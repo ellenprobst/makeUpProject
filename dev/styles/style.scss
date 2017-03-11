@@ -67,9 +67,16 @@ h1, h2, h3, h4 {
     background-color: $primaryColor;
     border-radius: 15px;
     color: $accentDark;
+    padding: 10px;
+}
+
+.productWrapper h3:after {
+	content: '<i class="fa fa-plus" aria-hidden="true"></i>';
+	content: '';
+	  position: absolute;
 }
 
 .productInfoWrapper {
 	display: flex
-	
+
 }
