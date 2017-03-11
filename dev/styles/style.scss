@@ -59,7 +59,9 @@ h1, h2, h3, h4 {
 .products__filter--price {
 	margin: 0 10px;
 }
-
+.productWrapper h3 {
+	position: relative;
+}
 .productWrapper h3 {
 	text-transform: capitalize;
     font-size: 2.6rem;
@@ -71,14 +73,22 @@ h1, h2, h3, h4 {
 }
 
 .productWrapper h3:after {
-	content: '<i class="fa fa-plus" aria-hidden="true"></i>';
-	content: '';
-	  position: absolute;
+	content: '\f067';
+	font-family: FontAwesome;
+	position: absolute;
+	right: 0;
+	top: 25%;
+	width: 50px;
+	height: 50px;
 }
 
 .productInfoWrapper {
-	display: flex
+	display: flex;
+}
 
+.productInfoWrapper img {
+	border: 5px solid $primaryColor;
+	margin: 10px
 }
 
 .basket__total {
@@ -86,4 +96,5 @@ h1, h2, h3, h4 {
 	padding: 25px;
 	color: #F6D9C7;
 }
+
 
