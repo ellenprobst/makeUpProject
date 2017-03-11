@@ -11,7 +11,7 @@ makeupApp.videoInfoList = [
 		productTypes: ["eyeshadow","eyeliner", "eyebrow","blush","lip_liner","lipstick"] 
 	},
 	{
-		title: "How TO: Apply FALSE EYELASHES tutorial" ,
+		title: "How To: Apply FALSE EYELASHES tutorial" ,
 		description: "If false eyelashes happen to be the biggest beauty bane of your existence, watch this in-depth six minute tutorial to learn easy-to-follow tips on how to quickly apply a band of falsies so that they look more natural and super flattering.",
 		productTypes: ["eyeliner","mascara"]
 	},
@@ -115,7 +115,7 @@ makeupApp.events = function(){
 			$('.productInfoWrapper').remove();
 		}
 		makeupApp.videoInfoList[makeupApp.currentIndex].productTypes.forEach(function(type){
-			makeupApp.data(type, 0, 14.99);
+			makeupApp.data(type, 0, 9.99);
 		})
 	});
 
@@ -125,7 +125,7 @@ makeupApp.events = function(){
 			$('.productInfoWrapper').remove();
 		}
 		makeupApp.videoInfoList[makeupApp.currentIndex].productTypes.forEach(function(type){
-			makeupApp.data(type, 15, 39.99);
+			makeupApp.data(type, 10, 19.99);
 		})
 	});
 
@@ -135,7 +135,7 @@ makeupApp.events = function(){
 			$('.productInfoWrapper').remove();
 		}
 		makeupApp.videoInfoList[makeupApp.currentIndex].productTypes.forEach(function(type){
-			makeupApp.data(type, 40, 10000);
+			makeupApp.data(type, 20, 10000);
 		})
 	});
 
