@@ -60,7 +60,7 @@ makeupApp.displayVideoInfo = function(index){
 	$('.product__type').empty();
 	makeupApp.videoInfoList[index].productTypes.forEach(function(type){
 		// console.log(type)
-		var title = $('<h3>').text(`${type}`);
+		var title = $('<h3>').text(`${type.replace(/_/g, ' ')}`);
 		var container = $('<div>').addClass(`${type}Wrapper productWrapper`).append(title);
 		$('.product__type').append(container);
 	})
