@@ -172,8 +172,8 @@ makeupApp.events = function(){
 		makeupApp.total = makeupApp.total + parseFloat(filteredItem[0].price);
 		makeupApp.shoppingCart.push(filteredItem[0]);
 
-		console.log(makeupApp.total.toFixed(2));
-		console.log(makeupApp.shoppingCart);
+		// console.log(makeupApp.total.toFixed(2));
+		// console.log(makeupApp.shoppingCart);
 
 		var makeupImage = filteredItem[0].image;
 		var makeupName = filteredItem[0].name;
@@ -186,9 +186,9 @@ makeupApp.events = function(){
 	$(".basket__layover").on("click", ".removeItem", function() {
 		makeupApp.total = 0;
 		var cartItemIndex = $(this).data("id");
-
+		console.log(cartItemIndex)
 		makeupApp.shoppingCart.splice(cartItemIndex,1);
-		console.log(makeupApp.shoppingCart);
+		// console.log(makeupApp.shoppingCart);
 
 		$(".basket__layover").empty();
 
