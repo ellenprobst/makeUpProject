@@ -198,6 +198,10 @@ makeupApp.events = function(){
 		$(".basket__total").html(makeupTotalEl);
 	});
 
+	$(".basket__total").on("click", function(){
+		$(".basket").slideToggle("slow");
+	})
+
 };
 
 
@@ -208,8 +212,9 @@ makeupApp.displayCart = function(makeupImage, makeupName, makeupPrice) {
 	var makeupPriceEl = $("<p>").text(`$${makeupPrice}`);
 	var cartItemIndex = makeupApp.shoppingCart.length - 1;
 	var makeupItemButtonEl = $("<button>").addClass("removeItem").text("Remove Item").attr('data-id',cartItemIndex);
+	var cartItemDetailsEl = $("<div>").append(makeupImageEl, makeupNameEl, makeupPriceEl).addClass("cartItemDetails")
 
-	var cartItemContainer = $("<div>").append(makeupImageEl, makeupNameEl, makeupPriceEl, makeupItemButtonEl).addClass(`cartItemContainer${cartItemIndex}`);
+	var cartItemContainer = $("<div>").append(cartItemDetailsEl, makeupItemButtonEl).addClass(`cartItemContainer${cartItemIndex} cartItemContainer`);
 
 	$(".basket__layover").append(cartItemContainer);
 	var makeupTotalEl = $("<p>").text(`Your total is: $${makeupApp.total.toFixed(2)}`);
