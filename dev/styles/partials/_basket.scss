@@ -1,0 +1,89 @@
+
+
+.basket__total {
+	background-color: #313B50;
+	padding: 25px;
+	color: #F6D9C7;
+}
+
+
+.basket {
+	display: none;
+	box-shadow: 0px 0px 20px #222;
+	background-color: #F4BDA5;
+	padding: 15px 30px;
+	margin-top: 80px;
+}
+
+.show {
+	display: block;
+}
+
+footer {
+	position: relative;
+}
+
+footer p {
+	font-size: 2.6rem;
+	text-align: center;
+}
+
+.basket__total.plus:after {
+	content: '\f067';
+	font-family: FontAwesome;
+	position: absolute;
+	right: 50px;
+	top: 45%;
+	width: 50px;
+	height: 50px;
+	font-size: 2.6rem;
+	display: block;
+}
+
+.basket__total.minus:after{
+	content: '\f068';
+	font-family: FontAwesome;
+	position: absolute;
+	right: 50px;
+	top: 45%;
+	width: 50px;
+	height: 50px;
+	display: block;
+}
+
+.cartItemContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center; 
+}
+
+.cartItemDetails {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    p {
+    	font-size: 1.2rem;
+	}
+	
+    img {
+    	width: 15%;
+    	margin: 10px;
+    }
+}
+.cartButton {
+	font-size: 2.6rem;
+	border-radius: 15px;
+	color: #313B50;
+	border: 5px solid #313B50;
+	background-color: #F4BDA5;
+}
+.cartButton:hover {
+	background-color: #313B50;
+    color: #F4BDA5;
+}
+.cartButton:focus {
+	background-color: #313B50;
+    color: #F4BDA5;
+    outline: none;
+}
