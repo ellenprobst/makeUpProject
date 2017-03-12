@@ -150,7 +150,7 @@ makeupApp.events = function(){
 	$('select').on( 'change', function() {
 	  var index = $(this).val();
 	  $carousel.flickity( 'select', index );
-	  console.log(index);
+	  // console.log(index);
 	});
 
 	$('.product__type').on('click', '.cartButton', function(){
@@ -167,25 +167,27 @@ makeupApp.events = function(){
 		}) // filteredItem
 
 		// console.log(makeupApp.total);
-		console.log(filteredItem[0].price);
+		// console.log(filteredItem[0].price);
 
 		makeupApp.total = makeupApp.total + parseFloat(filteredItem[0].price);
 		makeupApp.shoppingCart.push(filteredItem[0]);
 
-		console.log(makeupApp.total.toFixed(2));
-		console.log(makeupApp.shoppingCart);
+		// console.log(makeupApp.total.toFixed(2));
+		// console.log(makeupApp.shoppingCart);
 
 		var makeupImage = filteredItem[0].image;
 		var makeupName = filteredItem[0].name;
 		var makeupPrice = filteredItem[0].price;
+		var cartItemIndex = makeupApp.shoppingCart.length - 1;
 
-		makeupApp.displayCart(makeupImage, makeupName, makeupPrice);
+		makeupApp.displayCart(makeupImage, makeupName, makeupPrice, cartItemIndex);
 		// console.log(makeupApp.listOfSelectedItems)
 	})
 
 	$(".basket__layover").on("click", ".removeItem", function() {
 		makeupApp.total = 0;
 		var cartItemIndex = $(this).data("id");
+		console.log(cartItemIndex);
 
 		makeupApp.shoppingCart.splice(cartItemIndex,1);
 		console.log(makeupApp.shoppingCart);
@@ -198,7 +200,7 @@ makeupApp.events = function(){
 			var makeupName = currentItem.name;
 			var makeupPrice = currentItem.price;
 
-			makeupApp.displayCart(makeupImage, makeupName, makeupPrice)
+			makeupApp.displayCart(makeupImage, makeupName, makeupPrice, index)
 			makeupApp.total = makeupApp.total + parseFloat(currentItem.price);
 		});
 
@@ -213,12 +215,11 @@ makeupApp.events = function(){
 };
 
 
-makeupApp.displayCart = function(makeupImage, makeupName, makeupPrice) {
+makeupApp.displayCart = function(makeupImage, makeupName, makeupPrice, cartItemIndex) {
 
 	var makeupImageEl = $("<img>").attr("src", makeupImage).attr("alt", `Image of ${makeupName}`);
 	var makeupNameEl = $("<p>").text(makeupName);
 	var makeupPriceEl = $("<p>").text(`$${makeupPrice}`);
-	var cartItemIndex = makeupApp.shoppingCart.length - 1;
 	var makeupItemButtonEl = $("<button>").addClass("removeItem").text("Remove Item").attr('data-id',cartItemIndex);
 	var cartItemDetailsEl = $("<div>").append(makeupImageEl, makeupNameEl, makeupPriceEl).addClass("cartItemDetails")
 
@@ -228,7 +229,7 @@ makeupApp.displayCart = function(makeupImage, makeupName, makeupPrice) {
 	var makeupTotalEl = $("<p>").text(`Your total is: $${makeupApp.total.toFixed(2)}`);
 	$(".basket__total").html(makeupTotalEl);
 
-	console.log(makeupApp.shoppingCart.length);
+	// console.log(makeupApp.shoppingCart.length);
 
 }
 
