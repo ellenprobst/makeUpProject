@@ -87,3 +87,20 @@ footer p {
     color: #F4BDA5;
     outline: none;
 }
+.removeItem {
+	border-radius: 15px;
+	font-size: 1.3rem;
+	color: #313B50;
+	border: 5px solid #313B50;
+	background-color: #F4BDA5;
+}
+
+.removeItem:hover {
+		background-color: #313B50;
+	    color: #F4BDA5;
+}
+.removeItem:focus {
+	background-color: #313B50;
+    color: #F4BDA5;
+    outline: none;
+}
