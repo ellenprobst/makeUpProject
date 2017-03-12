@@ -82,11 +82,11 @@ p {
 	}
 }
 .products__types {
-	text-align: center;
 	text-transform: capitalize;
 	line-height: 2;
 	h2, h4{
 	text-decoration: underline;
+	text-align: center;
 	}
 }
 .products__filter {
@@ -134,7 +134,7 @@ p {
 	font-family: FontAwesome;
 	position: absolute;
 	right: 0;
-	top: 25%;
+	top: 13%;
 	width: 50px;
 	height: 50px;
 }
@@ -178,6 +178,7 @@ img {
 		}
 		.descriptionContainer {
 			font-size: 1.2rem;
+			text-align: left;
 		}
 	}
 	.buttonContainer {
