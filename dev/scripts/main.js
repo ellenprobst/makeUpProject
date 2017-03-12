@@ -69,7 +69,6 @@ makeupApp.displayVideoInfo = function(index){
 
 makeupApp.displayProductInfo = function(data, type){
 	// console.log(data);
-
 	for (let i = 0; i < 3; i = i + 1){
 		var currentItem = data[i];
 		// console.log(currentItem.id)
@@ -89,6 +88,7 @@ makeupApp.displayProductInfo = function(data, type){
 
 		var productInfoWrap = $('<div class="productInfoWrapper ">').append(imageContainer,productInformationContainer, buttonContainer);
 
+
 		var productItem = {
 			id:currentItem.id,
 			name:currentItem.name,
@@ -104,7 +104,7 @@ makeupApp.displayProductInfo = function(data, type){
 
 	}
 
-
+	$('.productInfoWrapper').hide();
 }
 
 makeupApp.events = function(){
@@ -116,6 +116,7 @@ makeupApp.events = function(){
 	  makeupApp.currentIndex = flkty.selectedIndex;
 	  makeupApp.displayVideoInfo(makeupApp.currentIndex);
 	})
+
 
 	$('#cheap').on('click', function(){
 		if($(".productInfoWrapper").length > 0){
@@ -146,6 +147,11 @@ makeupApp.events = function(){
 			makeupApp.data(type, 20, 10000);
 		})
 	});
+
+	$(".productWrapper h3").on("click", function(){
+		$(this).toggleClass("special");
+		$(this).siblings().slideToggle("medium");
+	})
 
 	$('select').on( 'change', function() {
 	  var index = $(this).val();
@@ -182,6 +188,7 @@ makeupApp.events = function(){
 
 		makeupApp.displayCart(makeupImage, makeupName, makeupPrice, cartItemIndex);
 		// console.log(makeupApp.listOfSelectedItems)
+		$(".basket__total").addClass("plus");
 	})
 
 	$(".basket__layover").on("click", ".removeItem", function() {
@@ -210,6 +217,11 @@ makeupApp.events = function(){
 	$(".basket__total").on("click", function(){
 		$(".basket").slideToggle("slow");
 	})
+	$("footer").on("click", function(){
+		$(this).find(".basket__total").toggleClass("minus");
+	})
+
+	
 
 };
 
