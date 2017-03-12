@@ -1,0 +1,119 @@
+.products__types {
+	text-transform: capitalize;
+	line-height: 2;
+	h2, h4{
+	text-decoration: underline;
+	text-align: center;
+	}
+}
+.products__filter {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.products__filter--price {
+	margin: 0 10px;
+	button {
+		font-size: 1.6rem;
+		border-radius: 15px;
+		padding: 10px 15px;
+		font-weight: 400;
+		color: $primaryColor;
+		border: 5px solid $primaryColor;
+		background-color: $accentDark;
+	}
+	button:hover {
+		background-color: $primaryColor;
+		color: $accentDark;
+	}
+	button:focus {
+		background-color: $primaryColor;
+		color: $accentDark;
+		outline: none;
+	}
+}
+
+.productWrapper h3 {
+	position: relative;
+}
+.productWrapper h3 {
+	text-transform: capitalize;
+    font-weight: 100;
+    background-color: $primaryColor;
+    border-radius: 15px;
+    color: $accentDark;
+    padding: 10px;
+}
+
+.productWrapper h3:after {
+	content: '\f067';
+	font-family: FontAwesome;
+	position: absolute;
+	right: 0;
+	top: 13%;
+	width: 50px;
+	height: 50px;
+}
+
+.productWrapper h3.special:after {
+	content: '\f068';
+	font-family: FontAwesome;
+	position: absolute;
+	right: 0;
+	top: 13%;
+	width: 50px;
+	height: 50px;
+}
+
+
+img {
+	border: 5px solid $primaryColor;
+	width: auto;
+	height: auto;
+	max-width: 160px;
+
+}
+
+//This is the product information price,name, description
+
+.productInfoWrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 15px 0;
+	.imageContainer {
+		max-width: 20%;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.informationContainer {
+		max-width: 70%; 
+		margin: 0 15px;
+		.namePriceContainer {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			font-size: 1.8rem;
+		}
+		.descriptionContainer {
+			font-size: 1.2rem;
+			text-align: left;
+		}
+	}
+	.buttonContainer {
+		max-width: 10%;
+		button {
+			height: 100px;
+			width: 80px;
+		}
+	}
+}
+.productInfoWrapper:nth-of-type(even) {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
