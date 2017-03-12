@@ -79,7 +79,15 @@ makeupApp.displayProductInfo = function(data, type){
 		var description = $('<p>').text(currentItem.description);
 		var price = $('<p>').text(`$${priceRounded}`);
 		var button = $('<button>').html('<i class="fa fa-shopping-cart" aria-hidden="true"></i>').addClass('cartButton').attr('data-id',currentItem.id);
-		var productInfoWrap = $('<div class="productInfoWrapper ">').append(image,product, price, description, button);
+
+		var imageContainer = $("<div>").addClass("imageContainer").append(image);
+		var productNamePriceContainer = $("<div>").addClass("namePriceContainer").append(product,price);
+		var descriptionContainer = $("<div>").addClass("descriptionContainer").append(description);
+		var productInformationContainer = $("<div>").addClass("informationContainer").append(productNamePriceContainer,descriptionContainer);
+		var buttonContainer = $("<div>").addClass("buttonContainer").append(button);
+
+
+		var productInfoWrap = $('<div class="productInfoWrapper ">').append(imageContainer,productInformationContainer, buttonContainer);
 
 		var productItem = {
 			id:currentItem.id,
