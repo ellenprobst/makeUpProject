@@ -79,7 +79,15 @@ makeupApp.displayProductInfo = function(data, type){
 		var description = $('<p>').text(currentItem.description);
 		var price = $('<p>').text(`$${priceRounded}`);
 		var button = $('<button>').html('<i class="fa fa-shopping-cart" aria-hidden="true"></i>').addClass('cartButton').attr('data-id',currentItem.id);
-		var productInfoWrap = $('<div class="productInfoWrapper ">').append(image,product, price, description, button);
+
+		var imageContainer = $("<div>").addClass("imageContainer").append(image);
+		var productNamePriceContainer = $("<div>").addClass("namePriceContainer").append(product,price);
+		var descriptionContainer = $("<div>").addClass("descriptionContainer").append(description);
+		var productInformationContainer = $("<div>").addClass("informationContainer").append(productNamePriceContainer,descriptionContainer);
+		var buttonContainer = $("<div>").addClass("buttonContainer").append(button);
+
+
+		var productInfoWrap = $('<div class="productInfoWrapper ">').append(imageContainer,productInformationContainer, buttonContainer);
 
 		var productItem = {
 			id:currentItem.id,
@@ -198,6 +206,10 @@ makeupApp.events = function(){
 		$(".basket__total").html(makeupTotalEl);
 	});
 
+	$(".basket__total").on("click", function(){
+		$(".basket").slideToggle("slow");
+	})
+
 };
 
 
@@ -208,8 +220,9 @@ makeupApp.displayCart = function(makeupImage, makeupName, makeupPrice) {
 	var makeupPriceEl = $("<p>").text(`$${makeupPrice}`);
 	var cartItemIndex = makeupApp.shoppingCart.length - 1;
 	var makeupItemButtonEl = $("<button>").addClass("removeItem").text("Remove Item").attr('data-id',cartItemIndex);
+	var cartItemDetailsEl = $("<div>").append(makeupImageEl, makeupNameEl, makeupPriceEl).addClass("cartItemDetails")
 
-	var cartItemContainer = $("<div>").append(makeupImageEl, makeupNameEl, makeupPriceEl, makeupItemButtonEl).addClass(`cartItemContainer${cartItemIndex}`);
+	var cartItemContainer = $("<div>").append(cartItemDetailsEl, makeupItemButtonEl).addClass(`cartItemContainer${cartItemIndex} cartItemContainer`);
 
 	$(".basket__layover").append(cartItemContainer);
 	var makeupTotalEl = $("<p>").text(`Your total is: $${makeupApp.total.toFixed(2)}`);
