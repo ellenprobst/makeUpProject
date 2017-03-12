@@ -60,7 +60,7 @@ makeupApp.displayVideoInfo = function(index){
 	$('.product__type').empty();
 	makeupApp.videoInfoList[index].productTypes.forEach(function(type){
 		// console.log(type)
-		var title = $('<h3>').text(`${type.replace(/_/g, ' ')}`);
+		var title = $('<h3>').text(`${type.replace(/_/g, ' ')}`).addClass("product__title");
 		var container = $('<div>').addClass(`${type}Wrapper productWrapper`).append(title);
 		$('.product__type').append(container);
 	})
@@ -148,15 +148,15 @@ makeupApp.events = function(){
 		})
 	});
 
-	$(".productWrapper h3").on("click", function(){
-		$(this).toggleClass("special");
-		$(this).siblings().slideToggle("medium");
-	})
-
 	$('select').on( 'change', function() {
 	  var index = $(this).val();
 	  $carousel.flickity( 'select', index );
 	  // console.log(index);
+	});
+
+	$(".product__type").on("click",".product__title", function(){
+		$(this).toggleClass("special");
+		$(this).siblings().slideToggle("medium");
 	});
 
 	$('.product__type').on('click', '.cartButton', function(){

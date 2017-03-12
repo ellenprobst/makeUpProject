@@ -133,6 +133,9 @@ p {
     border-radius: 15px;
     color: $accentDark;
     padding: 10px;
+    &:hover {
+    	cursor: pointer;
+    }
 }
 
 .productWrapper h3:after {
