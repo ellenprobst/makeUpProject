@@ -241,8 +241,12 @@ footer p:after {
     justify-content: space-between;
     align-items: center;
     width: 80%;
-
+    p {
+    	font-size: 1.2rem;
+	}
+	
     img {
     	width: 15%;
+    	margin: 10px;
     }
 }
