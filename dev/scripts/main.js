@@ -28,7 +28,7 @@ makeupApp.videoInfoList = [
 	{
 		title: "FAST Makeup Touch-up Routine!",
 		description: " Think of this as the five-minute face in reverse. After you’ve gotten all dolled up in the morning, this informative video teaches you how to touch everything up in four simple steps. Freshening up your face for cocktail hour has never been easier.",
-		productTypes: [""]
+		productTypes: ["foundation","lipstick"]
 	},
 	{
 		title: "How to: Contour & Highlight Your Face",
