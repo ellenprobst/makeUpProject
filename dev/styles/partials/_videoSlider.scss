@@ -106,32 +106,21 @@
 			h3 {
 				font-size: 1.7rem;
 			}
-			p {
-				font-size: 1rem;
-			}
 		}
 	}
 }
 @media (max-width: 665px) {
-	.video__selection {
-		select {
-			font-size: 0.8rem;
-		}
-	}
 	.video__wrapper {
 		.video__description {
 			h3 {
 				font-size: 1.4rem;
-			}
-			p {
-				font-size: 0.8rem;
 			}
 		}
 	}
 }
 
 @media (max-width: 570px) {
-	.video__selection .video__picker {
+	.video__selection select{
 		width: 80%;
 	} 
 }
