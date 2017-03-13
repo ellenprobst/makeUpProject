@@ -62,10 +62,6 @@ footer p {
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    p {
-    	font-size: 1.2rem;
-	}
-	
     img {
     	width: 15%;
     	margin: 10px;
@@ -83,6 +79,25 @@ footer p {
     color: #F4BDA5;
 }
 .cartButton:focus {
+	background-color: #313B50;
+    color: #F4BDA5;
+    outline: none;
+}
+.removeItem {
+	border-radius: 10px;
+    font-size: 1.6rem;
+    color: #313B50;
+    border: 5px solid #313B50;
+    background-color: #F4BDA5;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.removeItem:hover {
+		background-color: #313B50;
+	    color: #F4BDA5;
+}
+.removeItem:focus {
 	background-color: #313B50;
     color: #F4BDA5;
     outline: none;
